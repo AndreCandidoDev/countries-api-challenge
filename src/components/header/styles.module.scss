@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    padding: 2rem; 
+    user-select: none;
+    
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.headerDark {
+    background: var(--Dark-Blue);
+    color: var(--white);
+}
+
+.headerLight {
+    background: var(--white);
+    color: var(--Very-Dark-Blue-text);
+}
