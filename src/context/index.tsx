@@ -1,4 +1,5 @@
 "use client"
+import { countryType } from '@/types/countryType';
 import { ReactNode, createContext, useState } from 'react'
 
 type Props = {
@@ -9,15 +10,15 @@ type modeOptions = "light" | "dark"
 
 interface appContextType {
   mode: modeOptions
-//   data: appDataType[]
-//   setData: React.Dispatch<React.SetStateAction<appDataType[]>>
+  data: countryType[]
+  setData: React.Dispatch<React.SetStateAction<countryType[]>>
   setMode: React.Dispatch<React.SetStateAction<modeOptions>>
 }
 
 const defaultProvider: appContextType = {
   mode: "dark",
-//   data: [],
-//   setData: () => {},
+  data: [],
+  setData: () => {},
   setMode: () => {},
 }
 
@@ -25,13 +26,13 @@ const AppContext = createContext<appContextType>(defaultProvider)
 
 const AppProvider = ({ children }: Props) =>
 {
-//   const [data, setData] = useState<appDataType[]>(defaultProvider.data)
+  const [data, setData] = useState<countryType[]>(defaultProvider.data)
   const [mode, setMode] = useState<modeOptions>(defaultProvider.mode)
 
   const values = {
-    // data,
+    data,
     mode,
-    // setData,
+    setData,
     setMode,
   }
 

@@ -2,6 +2,37 @@
     padding: 2rem;
     height: 100vh;
     overflow: hidden;
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .countries {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        height: 80vh;
+        overflow: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+  
+    ::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+   
+    ::-webkit-scrollbar-thumb {
+        background: #777a92; 
+    }
+
 }
 
 .homePageDark {

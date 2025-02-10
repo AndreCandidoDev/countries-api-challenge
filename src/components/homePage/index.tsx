@@ -1,11 +1,19 @@
 "use client"
-import { useContext } from "react"
 import styles from "./styles.module.scss"
+import { useContext, useEffect } from "react"
 import { AppContext } from "@/context"
+import { countryType } from "@/types/countryType"
+import { CountryCard } from "./components/countryCard"
 
-export const HomePage = () =>
+interface HomePageProps {
+    countries: countryType[]
+}
+
+export const HomePage: React.FC<HomePageProps> = ({ countries }) =>
 {
-    const { mode } = useContext(AppContext)
+    const { mode, data, setData } = useContext(AppContext)
+
+    useEffect(() => { setData(countries) }, [countries, setData])
 
     const homePageClassName = () =>
     {
@@ -19,7 +27,18 @@ export const HomePage = () =>
 
     return (
         <div className={homePageClassName()}>
-            <div className={styles.content}></div>
+            <div className={styles.content}>
+                <div className={styles.countries}>
+                    {data.length > 0 && (
+                        data.map((country: countryType, key: number) => (
+                            <CountryCard 
+                                key={key} 
+                                country={country}
+                            />
+                        ))
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

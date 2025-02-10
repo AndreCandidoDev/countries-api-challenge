@@ -1,6 +1,16 @@
 import { HomePage } from "@/components/homePage";
+import { getAll } from "@/core/api";
 
-export default function Home() 
+async function getAllCountries() 
 {
-  return (<HomePage/>)
+  const countries = await getAll()
+ 
+  return countries
+}
+
+export default async function Home() 
+{
+  const countries = await getAllCountries()
+
+  return (<HomePage countries={countries}/>)
 }
