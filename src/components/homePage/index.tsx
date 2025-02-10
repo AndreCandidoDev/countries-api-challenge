@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react"
 import { AppContext } from "@/context"
 import { countryType } from "@/types/countryType"
 import { CountryCard } from "./components/countryCard"
+import { Filters } from "./components/filters"
 
 interface HomePageProps {
     countries: countryType[]
@@ -28,6 +29,7 @@ export const HomePage: React.FC<HomePageProps> = ({ countries }) =>
     return (
         <div className={homePageClassName()}>
             <div className={styles.content}>
+                <Filters/>
                 <div className={styles.countries}>
                     {data.length > 0 && (
                         data.map((country: countryType, key: number) => (

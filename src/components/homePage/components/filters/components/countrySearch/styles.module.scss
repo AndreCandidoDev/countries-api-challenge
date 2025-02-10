@@ -1,0 +1,41 @@
+.countrySearch {
+    width: 300px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        cursor: pointer;
+    }
+
+    input {
+        background: transparent;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0.8rem;
+        border-radius: 0.2rem;
+        text-align: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.countrySearchDark {
+    background: var(--Dark-Blue);
+
+    input {
+        color: var(--white);
+    }
+}
+
+.countrySearchLight {
+    background: var(--white);
+
+    input {
+        color: var(--Very-Dark-Blue-text);
+    }
+}

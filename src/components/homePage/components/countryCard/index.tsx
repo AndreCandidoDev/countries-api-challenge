@@ -39,7 +39,7 @@ export const CountryCard: React.FC<CountryCardProps> = ({ country }) =>
                 <h3>{country.name.common}</h3>
                 <div className={styles.info}>
                     <span>Population:</span>
-                    <span>{country.population}</span>
+                    <span>{new Intl.NumberFormat('en').format(country.population)}</span>
                 </div>
                 <div className={styles.info}>
                     <span>Region:</span>
