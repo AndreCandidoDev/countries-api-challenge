@@ -1,3 +1,20 @@
 .select {
-    padding: 0.6rem;
+    >div {
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.selectDark {
+    >div {
+        color: var(--white);
+        background: var(--Dark-Blue);
+    }
+}
+
+.selectLight {
+    >div {
+        background: var(--white);
+        color: var(--Very-Dark-Blue-text);
+    }
 }

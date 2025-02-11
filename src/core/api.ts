@@ -42,3 +42,22 @@ export const getByName = async (name: string) =>
         return []
     }
 }
+
+export const getByRegion = async (region: string) => 
+{
+    try
+    {
+        const result = await fetch(`${url}/region/${region.toLowerCase()}`)
+
+        if(result.ok)
+        {
+            const data = await result.json()
+            return data
+        }
+    }
+    catch(e)
+    {
+        console.error("Error", e)
+        return []
+    }
+}
