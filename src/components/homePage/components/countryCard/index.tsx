@@ -3,6 +3,7 @@ import Image from "next/image"
 import { countryType } from "@/types/countryType"
 import { useContext } from "react"
 import { AppContext } from "@/context"
+import { useRouter } from "next/navigation"
 
 interface CountryCardProps {
     country: countryType
@@ -10,9 +11,9 @@ interface CountryCardProps {
 
 export const CountryCard: React.FC<CountryCardProps> = ({ country }) =>
 {
-    console.log(country)
-
     const { mode } = useContext(AppContext)
+
+    const router = useRouter()
 
     const countryCardClassName = () =>
     {
@@ -25,7 +26,10 @@ export const CountryCard: React.FC<CountryCardProps> = ({ country }) =>
     }
 
     return (
-        <div className={countryCardClassName()}>
+        <div 
+            className={countryCardClassName()}
+            onClick={() => router.push(`/country/${(country.name.common).toLowerCase()}`)}
+        >
             <div className={styles.flag}>
                 <Image
                     priority    

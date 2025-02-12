@@ -3,23 +3,7 @@ export type countryType = {
         common: string
         official: string
         nativeName: {
-            eng?: {
-                official: string
-                common: string
-            }
-            fra?: {
-                official: string
-                common: string
-            }
-            gsw?: {
-                official: string
-                common: string
-            }
-            ita?: {
-                official: string
-                common: string
-            }
-            roh?: {
+            [key: string]: {
                 official: string
                 common: string
             }
@@ -33,13 +17,9 @@ export type countryType = {
     status: string
     unMember: boolean
     currencies: {
-        SHP?: {
-            name: string
-            symbol: string
-        }
-        CHF?: {
-            name: string
-            symbol: string
+        [key: string]: {
+            name: string;
+            symbol: string;
         }
     }
     idd: {
@@ -50,110 +30,10 @@ export type countryType = {
     altSpellings: Array<string>
     region: string
     languages: {
-        eng?: string
-        fra?: string
-        gsw?: string
-        ita?: string
-        roh?: string
+        [key: string]: string
     }
     translations: {
-        ara: {
-            official: string
-            common: string
-        }
-        bre: {
-            official: string
-            common: string
-        }
-        ces: {
-            official: string
-            common: string
-        }
-        cym: {
-            official: string
-            common: string
-        }
-        deu: {
-            official: string
-            common: string
-        }
-        est: {
-            official: string
-            common: string
-        }
-        fin: {
-            official: string
-            common: string
-        }
-        fra: {
-            official: string
-            common: string
-        }
-        hrv: {
-            official: string
-            common: string
-        }
-        hun: {
-            official: string
-            common: string
-        }
-        ita: {
-            official: string
-            common: string
-        }
-        jpn: {
-            official: string
-            common: string
-        }
-        kor: {
-            official: string
-            common: string
-        }
-        nld: {
-            official: string
-            common: string
-        }
-        per: {
-            official: string
-            common: string
-        }
-        pol: {
-            official: string
-            common: string
-        }
-        por: {
-            official: string
-            common: string
-        }
-        rus: {
-            official: string
-            common: string
-        }
-        slk: {
-            official: string
-            common: string
-        }
-        spa: {
-            official: string
-            common: string
-        }
-        srp: {
-            official: string
-            common: string
-        }
-        swe: {
-            official: string
-            common: string
-        }
-        tur: {
-            official: string
-            common: string
-        }
-        urd: {
-            official: string
-            common: string
-        }
-        zho: {
+        [key: string]: {
             official: string
             common: string
         }
@@ -162,11 +42,7 @@ export type countryType = {
     landlocked: boolean
     area: number
     demonyms: {
-        eng: {
-            f: string
-            m: string
-        }
-        fra?: {
+        [key: string]: {
             f: string
             m: string
         }
