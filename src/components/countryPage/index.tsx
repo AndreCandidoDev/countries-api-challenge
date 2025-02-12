@@ -31,9 +31,12 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
     {
         let currencies = ""
         
-        const keys = Object.keys(country.currencies)
-        
-        currencies = keys.reduce((acc, cur) => acc + ", " + cur)
+        if(country.currencies)
+        {
+            const keys = Object.keys(country.currencies)
+            
+            currencies = keys.reduce((acc, cur) => acc + ", " + cur)
+        }
         
         return currencies
     }
@@ -42,16 +45,19 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
     {
         let languages = ""
 
-        const keys = Object.keys(country.languages)
-        
-        languages = keys.map((item) => country.languages[item]).reduce((acc, cur) => acc + ", " + cur)
+        if(country.languages)
+        {
+            const keys = Object.keys(country.languages)
+            
+            languages = keys.map((item) => country.languages[item]).reduce((acc, cur) => acc + ", " + cur)
+        }
         
         return languages
     }
 
     const getCapitals = () =>
     {
-        return country.capital.reduce((acc, cur) => acc + ", " + cur)
+        return country.capital ? country.capital.reduce((acc, cur) => acc + ", " + cur) : ""
     }
 
     return (
@@ -89,8 +95,12 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                                         <span>{country.name.official}</span>
                                     </div>
                                     <div className={styles.textInfo}>
-                                        <span>Top Level Domain:</span>
-                                        <span>{country.tld[0]}</span>
+                                        {country.tld && (
+                                            <>
+                                                <span>Top Level Domain:</span>
+                                                <span>{country.tld[0]}</span>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                                 <div className={styles.lineInfo}>

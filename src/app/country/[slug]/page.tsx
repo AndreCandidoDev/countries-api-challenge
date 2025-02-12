@@ -67,7 +67,7 @@ async function borderCountries(slug: string): Promise<string[]>
   return names
 }
 
-export default async function Country({ params }: { params: paramsType }) 
+export default async function Country({ params }: { params: Promise<paramsType> }) 
 {
   const { slug } = await params
 
