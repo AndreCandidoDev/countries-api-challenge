@@ -110,3 +110,19 @@
         color: var(--Very-Dark-Blue-text);
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .countryPage {
+        .content {
+            .infos {
+                .info {
+                    .countryInfo {
+                        .lineInfo {
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

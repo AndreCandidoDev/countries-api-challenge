@@ -42,3 +42,29 @@
 .homePageLight {
     background: var(--Very-Light-Gray);
 }
+
+@media only screen and (max-width: 1250px) {
+    .homePage {
+        .countries {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    .homePage {
+        .countries {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .homePage {
+        .countries {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+    }
+}

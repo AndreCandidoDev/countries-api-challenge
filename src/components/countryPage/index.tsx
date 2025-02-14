@@ -95,12 +95,7 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                                         <span>{country.name.official}</span>
                                     </div>
                                     <div className={styles.textInfo}>
-                                        {country.tld && (
-                                            <>
-                                                <span>Top Level Domain:</span>
-                                                <span>{country.tld[0]}</span>
-                                            </>
-                                        )}
+                                        
                                     </div>
                                 </div>
                                 <div className={styles.lineInfo}>
@@ -128,7 +123,14 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                                         <span>Sub Region:</span>
                                         <span>{country.subregion}</span>
                                     </div>
-                                    <div className={styles.textInfo}></div>
+                                    <div className={styles.textInfo}>
+                                        {country.tld && (
+                                            <>
+                                                <span>Top Level Domain:</span>
+                                                <span>{country.tld[0]}</span>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
                                 <div className={styles.lineInfo}>
                                     <div className={styles.textInfo}>

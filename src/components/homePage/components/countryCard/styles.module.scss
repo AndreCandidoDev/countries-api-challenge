@@ -50,3 +50,10 @@
     background: var(--white);
     color: var(--Very-Dark-Blue-text);
 }
+
+@media only screen and (max-width: 1030px) {
+    .countryCard {
+        max-width: unset;
+        height: unset;
+    }
+}
