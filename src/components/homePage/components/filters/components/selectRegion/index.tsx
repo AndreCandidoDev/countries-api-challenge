@@ -1,4 +1,4 @@
-import Select from 'react-select';
+import Select, { StylesConfig } from 'react-select';
 import styles from "./styles.module.scss"
 import { useContext } from 'react';
 import { AppContext } from '@/context';
@@ -62,6 +62,30 @@ export const SelectRegion = () =>
         return styles.select + " " + styles.selectLight
     }
 
+    const getColor = () =>
+    {
+        return mode === 'dark' ? "var(--white)" : "var(--Very-Dark-Blue-text)"
+    }
+
+    const colorStyles: StylesConfig = 
+    {
+        option: (styles) => 
+        {
+          return {
+            ...styles,
+            cursor: 'pointer',
+            backgroundColor: mode === 'dark' ? "var(--Dark-Blue)" : "var(--white)",
+            color: getColor(),
+            ":hover" : {
+                background: "var(--Very-Light-Gray)",
+                color: "var(--Dark-Gray)"
+            }
+          }
+        },
+        placeholder: (styles) => ({ ...styles, color: getColor() }),
+        singleValue: (styles) => ({ ...styles, color: getColor() }),
+    }
+
     return (
         <Select
             className={selectClassName()}
@@ -71,7 +95,8 @@ export const SelectRegion = () =>
             isSearchable={false}
             name="color"
             options={options}
-            onChange={(e) => handleSelect(e)}
+            onChange={(newValue: unknown) => handleSelect(newValue as selectOption | null)}
+            styles={colorStyles}
         />
     )
 }

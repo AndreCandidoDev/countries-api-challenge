@@ -31,12 +31,20 @@
     input {
         color: var(--white);
     }
+
+    input::placeholder {
+        color: var(--white);
+    }
 }
 
 .countrySearchLight {
     background: var(--white);
 
     input {
+        color: var(--Very-Dark-Blue-text);
+    }
+
+    input::placeholder {
         color: var(--Very-Dark-Blue-text);
     }
 }

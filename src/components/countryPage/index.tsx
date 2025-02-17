@@ -91,15 +91,6 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                             <div className={styles.countryInfo}>
                                 <div className={styles.lineInfo}>
                                     <div className={styles.textInfo}>
-                                        <span>Official Name:</span>
-                                        <span>{country.name.official}</span>
-                                    </div>
-                                    <div className={styles.textInfo}>
-                                        
-                                    </div>
-                                </div>
-                                <div className={styles.lineInfo}>
-                                    <div className={styles.textInfo}>
                                         <span>Population:</span>
                                         <span>{new Intl.NumberFormat('en').format(country.population)}</span>
                                     </div>
@@ -140,16 +131,18 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                                     <div className={styles.textInfo}></div>
                                 </div>
                             </div>
-                            <div className={styles.lineInfo}>
-                                <div className={styles.textInfo}>
-                                    <span>Border Countries:</span>
-                                    <span className={styles.borders}>
-                                        {borders.map((item, key) => (
-                                            <button key={key}>{item}</button>
-                                        ))}
-                                    </span>
+                            {borders.length > 0 && (
+                                <div className={styles.lineInfo}>
+                                    <div className={styles.textInfo}>
+                                        <span>Border Countries:</span>
+                                        <span className={styles.borders}>
+                                            {borders.map((item, key) => (
+                                                <button key={key}>{item}</button>
+                                            ))}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>
