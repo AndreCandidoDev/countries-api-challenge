@@ -35,8 +35,7 @@ export const CountryCard: React.FC<CountryCardProps> = ({ country }) =>
                     priority    
                     src={country.flags.png}
                     alt={String(country.flags.alt)}
-                    height={20}
-                    width={20}
+                    fill={true}
                 />
             </div>
             <div className={styles.infos}>

@@ -79,8 +79,7 @@ export const CountryPage: React.FC<CountryPageProps> = ({ country, borders }) =>
                                 priority    
                                 src={country?.flags?.png}
                                 alt={String(country?.flags?.alt)}
-                                layout="fill"
-                                objectFit="cover"
+                                fill={true}
                             />
                         </div>
                         <div className={styles.info}>
